@@ -26,7 +26,7 @@ def my_view(request):
 
     
     # Python - BAD PRACTICE 
-import psycopg2123
+import psycopg1234
 
 def connect_to_db():
     conn = psycopg2.connect(
