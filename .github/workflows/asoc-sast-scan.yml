@@ -33,9 +33,8 @@ jobs:
           service_url:  https://blmycldtl446131.nonprod.hclpnp.com
           acceptssl: true
           personal_scan: false
-          wait_for_analysis: false
-          incremental_scan: false
-          sast_scan_id:  2b1787bd-e930-486d-9ecf-c951776c8543
+          wait_for_analysis: true
+          incremental_scan: true
           fail_for_noncompliance: false
           failure_threshold: High
     env: 
