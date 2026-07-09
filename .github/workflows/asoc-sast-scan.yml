@@ -1,0 +1,42 @@
+name: "HCL AppScan SAST"
+
+permissions:
+  statuses: write
+  contents: read
+
+on:
+    pull_request:
+      branches: [main]
+      types: [opened, synchronize]
+jobs:
+  scan:
+    runs-on: self-hosted
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+          
+      - name: Get current date
+        id: date
+        run: echo "date=$(Get-Date -Format 'yyyy-MM-dd HH:mm')" >> $env:GITHUB_OUTPUT
+        
+      - name: Run AppScan SAST scan
+        id: appscan
+        uses: HCL-TECH-SOFTWARE/appscan-sast-action@ASA-13165_GitHub_PR_Scan_Summary
+        with:
+          asoc_key: ${{ secrets.ASOC_KEY }}
+          asoc_secret: ${{ secrets.ASOC_SECRET }}
+          application_id: ${{ secrets.ASOC_APP_ID }}
+          scan_name: "SAST ${{ steps.date.outputs.date }} Incremental scan"
+          static_analysis_only: true
+          service_url:  https://blmycldtl446131.nonprod.hclpnp.com
+          acceptssl: true
+          personal_scan: false
+          wait_for_analysis: false
+          incremental_scan: false
+          sast_scan_id:  2b1787bd-e930-486d-9ecf-c951776c8543
+          fail_for_noncompliance: false
+          failure_threshold: High
+    env: 
+      GITHUB_TOKEN: ${{secrets.GITHUB_TOKEN}}
