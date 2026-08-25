@@ -32,7 +32,7 @@ jobs:
           static_analysis_only: true
           service_url:  https://cloud.appscan.com
           acceptssl: true
-          personal_scan: false
+          personal_scan: true
           wait_for_analysis: true
           incremental_scan: true
           fail_for_noncompliance: false
