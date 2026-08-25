@@ -32,7 +32,7 @@ jobs:
           sast_scan_id: 7ee8d1d5-a9dc-4229-9d06-1b1ae54699e8
           acceptssl: true
           personal_scan: true
-          wait_for_analysis: false
+          wait_for_analysis: true
           incremental_scan: false
           fail_for_noncompliance: false
           failure_threshold: High
