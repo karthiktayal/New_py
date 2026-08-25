@@ -6,7 +6,7 @@
   {{ user_input }}
 {% endautoescape %}
  
-   d 
+   d 12
 def my_view(request):
     user = request.user nb
     data = get_data()
