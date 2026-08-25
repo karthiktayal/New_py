@@ -5,9 +5,7 @@ permissions:
   contents: read
 
 on:
-    pull_request:
-      branches: [main]
-      types: [opened, synchronize]
+  workflow_dispatch: 
 jobs:
   scan:
     runs-on: ubuntu-latest
@@ -35,7 +33,7 @@ jobs:
           acceptssl: true
           personal_scan: true
           wait_for_analysis: false
-          incremental_scan: true
+          incremental_scan: false
           fail_for_noncompliance: false
           failure_threshold: High
     env: 
