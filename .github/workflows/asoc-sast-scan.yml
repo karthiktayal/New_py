@@ -30,7 +30,7 @@ jobs:
           application_id: ${{ secrets.ASOC_APP_ID }}
           scan_name: "SAST ${{ steps.date.outputs.date }} Incremental scan"
           static_analysis_only: true
-          service_url:  https://blmycldtl446131.nonprod.hclpnp.com
+          service_url:  https://cloud.appscan.com
           acceptssl: true
           personal_scan: false
           wait_for_analysis: true
