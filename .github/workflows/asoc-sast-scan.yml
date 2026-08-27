@@ -5,7 +5,9 @@ permissions:
   contents: read
 
 on:
-  workflow_dispatch: 
+    pull_request:
+      branches: [main]
+      types: [opened, synchronize]
 jobs:
   scan:
     runs-on: ubuntu-latest
