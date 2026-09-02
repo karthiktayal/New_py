@@ -6,7 +6,7 @@
   {{ user_input }}
 {% endautoescape %}
  
-   d 12 13 14 rescan inf
+   d 12 13 14 rescan inf pull request
 def my_view(request):
     user = request.user nb
     data = get_data()
